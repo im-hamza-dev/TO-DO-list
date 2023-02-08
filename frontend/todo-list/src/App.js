@@ -1,14 +1,12 @@
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
+import TodoList from "./pages/TodoList/todolist";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Advanced React Todo-list</p>
-      </header>
-    </div>
+    <React.Fragment>
+      <TodoList />
+    </React.Fragment>
   );
 }
 
