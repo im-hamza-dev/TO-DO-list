@@ -5,19 +5,19 @@ import "./newTodoForm.scss";
 
 const NewTodoForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredPrice, setEnteredPrice] = useState("");
+  const [description, setDescription] = useState("");
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
   };
 
   const priceChangeHandler = (event) => {
-    setEnteredPrice(event.target.value);
+    setDescription(event.target.value);
   };
 
   const submitProductHandler = (event) => {
     event.preventDefault();
-    props.onAddTodo(enteredTitle, enteredPrice);
+    props.onAddTodo(enteredTitle, description);
   };
 
   return (
@@ -32,11 +32,10 @@ const NewTodoForm = (props) => {
           onChange={titleChangeHandler}
         />
         <Input
-          type="number"
-          label="Price"
-          step={0.01}
-          id="price"
-          value={enteredPrice}
+          type="text"
+          label="Description"
+          id="desc"
+          value={description}
           onChange={priceChangeHandler}
         />
         <Button type="submit">Add Task</Button>
