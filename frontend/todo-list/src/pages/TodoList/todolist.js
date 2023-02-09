@@ -28,7 +28,7 @@ function TodoList() {
         desc: description, // "+" to convert string to number
       };
       let hasError = false;
-      const response = await fetch("http://localhost:5000/product", {
+      const response = await fetch("http://localhost:5000/todoItem", {
         method: "POST",
         body: JSON.stringify(newTodo),
         headers: {
@@ -49,7 +49,7 @@ function TodoList() {
       setTodoItems((todos) => {
         return todos.concat({
           ...newTodo,
-          id: responseData.todo.id,
+          id: responseData.todoItem.id,
         });
       });
     } catch (error) {
