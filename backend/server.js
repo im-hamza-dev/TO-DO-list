@@ -1,10 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const uuid = require("uuid/v4");
-
+const itemroutes = require("./routes/item-routes");
 const app = express();
-
-const todoItemsBucket = []; // not a database, just some in-memory storage for now
 
 app.use(bodyParser.json());
 
@@ -22,35 +19,14 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/todoItems", (req, res, next) => {
-  res.status(200).json({ todoItems: todoItemsBucket });
-});
-
-app.post("/todoItem", (req, res, next) => {
-  const { title, desc } = req.body;
-
-  if (
-    !title ||
-    title.trim().length === 0 ||
-    !desc ||
-    desc.trim().length === 0
-  ) {
-    return res.status(422).json({
-      message: "Invalid input, please enter a valid title and desc.",
-    });
+app.use("/api/", itemroutes);
+app.use((error, req, res, next) => {
+  if (res.headerSent) {
+    return next(error);
   }
 
-  const createdItem = {
-    id: uuid(),
-    title,
-    desc,
-  };
-
-  todoItemsBucket.push(createdItem);
-
-  res
-    .status(201)
-    .json({ message: "New todo item created.", todoItem: createdItem });
+  res.status(error.code || 500);
+  res.json({ message: error.message || "Unknown error occured!" });
 });
 
 app.listen(5000); // start Node + Express server on port 5000

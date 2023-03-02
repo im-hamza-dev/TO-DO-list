@@ -10,7 +10,7 @@ const List = (props) => {
     content = (
       <ul className="product-list">
         {props.items.map((p) => (
-          <ProductItem key={p.id} name={p.title} price={p.price} />
+          <ProductItem key={p.id} name={p.title} desc={p.desc} />
         ))}
       </ul>
     );

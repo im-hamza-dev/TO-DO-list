@@ -10,7 +10,7 @@ function TodoList() {
   useEffect(() => {
     const fetchItems = async () => {
       setIsLoading(true);
-      const response = await fetch("http://localhost:5000/todoItems");
+      const response = await fetch("http://localhost:5000/api/todoItems");
 
       const responseData = await response.json();
 
@@ -28,7 +28,7 @@ function TodoList() {
         desc: description, // "+" to convert string to number
       };
       let hasError = false;
-      const response = await fetch("http://localhost:5000/todoItem", {
+      const response = await fetch("http://localhost:5000/api/todoItem", {
         method: "POST",
         body: JSON.stringify(newTodo),
         headers: {
