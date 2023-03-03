@@ -3,7 +3,12 @@ const HttpError = require("../models/http-error");
 const router = express.Router();
 const uuid = require("uuid/v4");
 
-const todoItemsBucket = []; // not a database, just some in-memory storage for now
+const todoItemsBucket = [
+  {
+    title: "Docker Kubernetes",
+    desc: "Details: Take basic understanding of docker to implement beginner level use-cases",
+  },
+]; // not a database, just some in-memory storage for now
 
 router.get("/todoItems", (req, res, next) => {
   res.status(200).json({ todoItems: todoItemsBucket });

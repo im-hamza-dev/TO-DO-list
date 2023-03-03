@@ -32,7 +32,7 @@ const NewTodoForm = (props) => {
           onChange={titleChangeHandler}
         />
         <Input
-          type="text"
+          type="textarea"
           label="Description"
           id="desc"
           value={description}
