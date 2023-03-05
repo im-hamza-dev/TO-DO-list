@@ -61,9 +61,9 @@ function TodoList() {
     <React.Fragment>
       <Header />
       <main className="main-wrapper">
+        {!isLoading && <List items={todoItems} />}
         <NewTodoForm onAddTodo={addTodoHandler} />
         {isLoading && <p className="loader">Loading...</p>}
-        {!isLoading && <List items={todoItems} />}
       </main>
     </React.Fragment>
   );
