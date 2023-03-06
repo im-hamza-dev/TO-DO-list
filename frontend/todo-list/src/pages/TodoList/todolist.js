@@ -36,7 +36,7 @@ function TodoList() {
         },
       });
 
-      if (!response.ok) {
+      if (![200, 201].includes(response.code)) {
         hasError = true;
       }
 
