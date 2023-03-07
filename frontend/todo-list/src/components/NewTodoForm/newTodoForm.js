@@ -11,7 +11,7 @@ const NewTodoForm = (props) => {
     setEnteredTitle(event.target.value);
   };
 
-  const priceChangeHandler = (event) => {
+  const descChangeHandler = (event) => {
     setDescription(event.target.value);
   };
 
@@ -36,9 +36,9 @@ const NewTodoForm = (props) => {
           label="Description"
           id="desc"
           value={description}
-          onChange={priceChangeHandler}
+          onChange={descChangeHandler}
         />
-        <Button type="submit">Add Task</Button>
+        <Button type="submit">Add Todo </Button>
       </form>
     </section>
   );
