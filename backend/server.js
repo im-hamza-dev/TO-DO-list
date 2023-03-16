@@ -1,6 +1,8 @@
+// imort routes-model
+const itemroutes = require("./routes/item-routes");
+
 const express = require("express");
 const bodyParser = require("body-parser");
-const itemroutes = require("./routes/item-routes");
 const app = express();
 
 app.use(bodyParser.json());
@@ -20,6 +22,8 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/", itemroutes);
+
+//error-model middleware
 app.use((error, req, res, next) => {
   if (res.headerSent) {
     return next(error);
