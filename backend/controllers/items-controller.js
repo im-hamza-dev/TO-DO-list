@@ -8,14 +8,14 @@ const todoItemsBucket = [
   },
 ]; // not a database, just some in-memory storage for now
 
-const getItems = (req, res, next) => {
+const getTodoItems = (req, res, next) => {
   if (!todoItemsBucket) {
     throw new HttpError("No To-do Items found", 404);
   }
   res.status(200).json({ todoItems: todoItemsBucket });
 };
 
-const createItems = (req, res, next) => {
+const createTodoItems = (req, res, next) => {
   const { title, desc } = req.body;
 
   if (
@@ -42,5 +42,5 @@ const createItems = (req, res, next) => {
     .json({ message: "New todo item created.", todoItem: createdItem });
 };
 
-exports.getItems = getItems;
-exports.createItems = createItems;
+exports.getTodoItems = getTodoItems;
+exports.createTodoItems = createTodoItems;
