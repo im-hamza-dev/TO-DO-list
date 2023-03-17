@@ -5,6 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
+// body-parser used for POST request to use json data
 app.use(bodyParser.json());
 
 // CORS Headers => Required for cross-origin/ cross-server communication
