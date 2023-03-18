@@ -1,5 +1,6 @@
-// imort routes-model
+// imort routes-model and error-model
 const itemroutes = require("./routes/item-routes");
+const HttpError = require("./models/http-error");
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -23,6 +24,11 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/", itemroutes);
+
+app.use((req, res, next) => {
+  const error = new HttpError("Could not find this route.", 404);
+  throw error;
+});
 
 //error-model middleware
 app.use((error, req, res, next) => {
