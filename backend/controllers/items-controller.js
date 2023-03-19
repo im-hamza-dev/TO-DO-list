@@ -18,10 +18,10 @@ const getTodoItems = (req, res, next) => {
 const createTodoItems = (req, res, next) => {
   const { title, desc } = req.body;
 
-  const { errors } = validationResult(req);
-
+  const errors = validationResult(req);
+  console.log(errors);
   if (!errors.isEmpty()) {
-    next(
+    return next(
       new HttpError("Invalid input, please enter a valid title and desc.", 404)
     );
   }
