@@ -2,6 +2,7 @@
 const itemroutes = require("./routes/item-routes");
 const HttpError = require("./models/http-error");
 
+const { check } = require("express-validator");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -23,7 +24,16 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/", itemroutes);
+app.use(
+  "/api/",
+  [
+    check("title").not().isEmpty(),
+    check("desc").not().isEmpty(),
+    check("title").isLength({ min: 10 }),
+    check("desc").isLength({ min: 10 }),
+  ],
+  itemroutes
+);
 
 app.use((req, res, next) => {
   const error = new HttpError("Could not find this route.", 404);

@@ -1,6 +1,6 @@
 const uuid = require("uuid/v4");
 const HttpError = require("../models/http-error");
-
+const { validationResult } = require("express-validator");
 const todoItemsBucket = [
   {
     title: "Docker Kubernetes",
@@ -18,12 +18,9 @@ const getTodoItems = (req, res, next) => {
 const createTodoItems = (req, res, next) => {
   const { title, desc } = req.body;
 
-  if (
-    !title ||
-    title.trim().length === 0 ||
-    !desc ||
-    desc.trim().length === 0
-  ) {
+  const { errors } = validationResult(req);
+
+  if (!errors.isEmpty()) {
     next(
       new HttpError("Invalid input, please enter a valid title and desc.", 404)
     );
