@@ -21,7 +21,7 @@ const NewTodoForm = (props) => {
   };
 
   return (
-    <section id="new-li">
+    <section id="new-li" className="right-col">
       <h2>Add a New Todo Item</h2>
       <form onSubmit={submitProductHandler}>
         <Input
