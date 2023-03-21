@@ -5,10 +5,10 @@ import "./list.scss";
 const List = (props) => {
   let content;
   if (!props.items || props.items.length === 0) {
-    content = <p>Could not find any products. Maybe create one?</p>;
+    content = <p>Could not find any item. Maybe create one?</p>;
   } else {
     content = (
-      <ul className="product-list">
+      <ul className="item-list">
         {props.items.map((p) => (
           <ProductItem key={p.id} name={p.title} desc={p.desc} />
         ))}
@@ -16,7 +16,7 @@ const List = (props) => {
     );
   }
 
-  return <section id="products">{content}</section>;
+  return <section id="items">{content}</section>;
 };
 
 export default List;
