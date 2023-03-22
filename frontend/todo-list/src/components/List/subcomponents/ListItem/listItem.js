@@ -5,7 +5,7 @@ const ListItem = ({ name, desc }) => {
   return (
     <li className="product-item">
       <h2>{name}</h2>
-      <p>Details: {desc}</p>
+      <p>Description: {desc}</p>
     </li>
   );
 };
