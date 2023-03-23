@@ -29,8 +29,8 @@ app.use(
   [
     check("title").not().isEmpty(),
     check("desc").not().isEmpty(),
-    check("title").isLength({ min: 10 }),
-    check("desc").isLength({ min: 10 }),
+    check("title").isLength({ min: 5 }),
+    check("desc").isLength({ min: 5 }),
   ],
   itemroutes
 );
