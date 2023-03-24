@@ -41,7 +41,7 @@ function TodoList() {
       }
 
       const responseData = await response.json();
-
+      console.log(responseData);
       if (hasError) {
         throw new Error(responseData.message);
       }
