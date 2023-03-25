@@ -1,28 +1,25 @@
-const uuid = require("uuid/v4");
 const HttpError = require("../models/http-error");
 const { validationResult } = require("express-validator");
-const { MongoClient } = require("mongodb");
+// const { MongoClient } = require("mongodb");
+const mongoose = require("mongoose");
 const uri =
   "mongodb+srv://hamzadev:aYm6UokQghIaSktB@cluster0.4mfsatg.mongodb.net/?retryWrites=true&w=majority";
 
+const TodoItem = require("../models/todo-items");
+
+// Connecting MongoDB database
+mongoose
+  .connect(uri)
+  .then(() => console.log("Connecting MongoDB"))
+  .catch((err) => console.log("Unable to Connect", err));
+
 const getTodoItems = async (req, res, next) => {
   // Connecting MongoDB database
-  const client = new MongoClient(uri);
-  let itemsList;
-  try {
-    await client.connect();
-    const db = client.db("Cluster0");
-
-    itemsList = await db.collection("todos").find().toArray();
-  } catch (error) {
-    // throw new HttpError("Could not retrieve data", 404);
-    return next(new HttpError("Could not retrieve data", 404));
-  }
-  client.close();
-
+  let itemsList = await TodoItem.find().exec();
   if (!itemsList) {
     return next(new HttpError("No To-do Items found", 404));
   }
+
   res.status(200).json({ todoItems: itemsList });
 };
 
@@ -38,26 +35,16 @@ const createTodoItems = async (req, res, next) => {
     );
   }
 
-  const createdItem = {
-    id: uuid(),
+  const createdItem = new TodoItem({
     title,
     desc,
-  };
+  });
   console.log(createdItem);
-
-  // Connecting MongoDB database
-  const client = new MongoClient(uri);
-  try {
-    await client.connect();
-    const db = client.db("Cluster0");
-    const itemsList = await db.collection("todos").insertOne(createdItem);
-  } catch (error) {
-    return next(new HttpError("Could not store data"));
-  }
-  client.close();
-  res
-    .status(201)
-    .json({ message: "New todo item created.", todoItem: createdItem });
+  let result = await createdItem.save();
+  res.status(201).json({
+    message: "New todo item created.",
+    todoItem: result,
+  });
 };
 
 exports.getTodoItems = getTodoItems;

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const ItemsController = require("../controllers/items-controller");
+const ItemsController = require("../controllers/items-controller-old");
 
 router.get("/todoItems", ItemsController.getTodoItems);
 

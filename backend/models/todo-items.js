@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const todoItemsSchema = new mongoose.Schema({
   title: { type: string, required: true },
   description: { type: string, required: true },
-  status: { type: string, required: true },
-  deadline: { type: string, required: true },
+  status: { type: string },
+  deadline: { type: string },
 });
 
 module.exports = mongoose.model("TodoItem", todoItemsSchema);
