@@ -4,7 +4,9 @@ import "./header.scss";
 const Header = (props) => {
   return (
     <header className="header">
-      <h1>Todo List</h1>
+      <h1>
+        Notes<sup>+</sup>
+      </h1>
     </header>
   );
 };

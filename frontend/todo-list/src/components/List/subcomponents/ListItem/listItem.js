@@ -3,10 +3,17 @@ import "./listItem.scss";
 
 const ListItem = ({ name, desc }) => {
   return (
-    <li className="product-item">
-      <p>Pending</p>
-      <h2>{name}</h2>
-      <p>{desc}</p>
+    <li className="list-item">
+      <div className="header-row"></div>
+      <div className="content">
+        <span className="status">Pending</span>
+        <h2 className="heading">{name}</h2>
+        <p className="desc">{desc}</p>
+        <div className="tags">
+          <span>Project</span>
+          <span>MERN</span>
+        </div>
+      </div>
     </li>
   );
 };

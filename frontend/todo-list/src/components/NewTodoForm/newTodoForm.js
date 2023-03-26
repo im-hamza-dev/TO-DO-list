@@ -6,6 +6,9 @@ import "./newTodoForm.scss";
 const NewTodoForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [deadline, setDeadline] = useState("");
+  const [status, setStatus] = useState("");
+  const [tags, setTags] = useState("");
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -13,6 +16,15 @@ const NewTodoForm = (props) => {
 
   const descChangeHandler = (event) => {
     setDescription(event.target.value);
+  };
+  const deadlineChangeHandler = (event) => {
+    setDeadline(event.target.value);
+  };
+  const statusChangeHandler = (event) => {
+    setStatus(event.target.value);
+  };
+  const tagsChangeHandler = (event) => {
+    setTags(event.target.value);
   };
 
   const submitProductHandler = (event) => {
@@ -37,6 +49,27 @@ const NewTodoForm = (props) => {
           id="desc"
           value={description}
           onChange={descChangeHandler}
+        />
+        <Input
+          type="text"
+          label="Status"
+          id="status"
+          value={status}
+          onChange={statusChangeHandler}
+        />
+        <Input
+          type="date"
+          label="Deadline"
+          id="date"
+          value={deadline}
+          onChange={deadlineChangeHandler}
+        />
+        <Input
+          type="tags"
+          label="Tags"
+          id="tags"
+          value={tags}
+          onChange={tagsChangeHandler}
         />
         <Button type="submit">Add Todo </Button>
       </form>

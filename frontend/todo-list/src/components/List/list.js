@@ -1,5 +1,5 @@
 import React from "react";
-import ProductItem from "./subcomponents/ListItem/listItem";
+import ListItem from "./subcomponents/ListItem/listItem";
 import "./list.scss";
 
 const List = (props) => {
@@ -10,7 +10,7 @@ const List = (props) => {
     content = (
       <ul className="item-list">
         {props.items.map((p) => (
-          <ProductItem key={p.id} name={p.title} desc={p.desc} />
+          <ListItem key={p.id} name={p.title} desc={p.desc} />
         ))}
       </ul>
     );
