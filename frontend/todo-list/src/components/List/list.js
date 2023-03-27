@@ -16,7 +16,13 @@ const List = (props) => {
     );
   }
 
-  return <section id="items">{content}</section>;
+  return (
+    <section className="items">
+      <div className="items-col">{content}</div>
+      <div className="items-col">{content}</div>
+      <div className="items-col">{content}</div>
+    </section>
+  );
 };
 
 export default List;

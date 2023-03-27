@@ -1,10 +1,20 @@
-#items {
+.items {
   width: 70%;
   max-width: 40rem;
   margin: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  .items-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 
-#items > p {
+.items > p {
   text-align: left;
 }
 
