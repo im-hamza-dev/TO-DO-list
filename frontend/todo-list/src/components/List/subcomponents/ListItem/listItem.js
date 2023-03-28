@@ -3,7 +3,7 @@ import "./listItem.scss";
 
 const ListItem = ({ name, desc }) => {
   return (
-    <li className="list-item">
+    <div className="list-item">
       <div className="header-row"></div>
       <div className="content">
         <span className="status">Pending</span>
@@ -14,7 +14,7 @@ const ListItem = ({ name, desc }) => {
           <span>MERN</span>
         </div>
       </div>
-    </li>
+    </div>
   );
 };
 

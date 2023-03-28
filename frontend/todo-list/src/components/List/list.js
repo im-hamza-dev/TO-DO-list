@@ -8,11 +8,11 @@ const List = (props) => {
     content = <p>Could not find any item. Maybe create one?</p>;
   } else {
     content = (
-      <ul className="item-list">
+      <>
         {props.items.map((p) => (
           <ListItem key={p.id} name={p.title} desc={p.desc} />
         ))}
-      </ul>
+      </>
     );
   }
 
