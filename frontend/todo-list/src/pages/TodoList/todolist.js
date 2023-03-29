@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-
+import { Button } from "react-bootstrap";
 import { Header, NewTodoForm, List } from "../../components";
 import "./todolist.scss";
 
 function TodoList() {
   const [todoItems, setTodoItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [openForm, setOpenForm] = useState(false);
   useEffect(() => {
     const fetchItems = async () => {
       setIsLoading(true);
@@ -63,7 +63,12 @@ function TodoList() {
       <main className="main-wrapper">
         {!isLoading && <List items={todoItems} />}
         {isLoading && <p className="loader">Loading...</p>}
-        <NewTodoForm onAddTodo={addTodoHandler} />
+        <Button onClick={() => setOpenForm(true)}>Add Notes</Button>
+        <NewTodoForm
+          openForm={openForm}
+          onAddTodo={addTodoHandler}
+          setOpenForm={setOpenForm}
+        />
       </main>
     </React.Fragment>
   );

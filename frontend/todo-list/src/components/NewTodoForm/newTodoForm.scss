@@ -1,19 +1,18 @@
-#new-product {
-  width: 90%;
-  max-width: 40rem;
-  margin: 2rem auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 6px;
-  padding: 1rem;
+.custom-modal {
+  background-color: black;
 }
-h2,
-label {
-  color: #343434;
-}
-.right-col {
-  width: 30%;
-  margin-right: 50px;
-  background-color: #ffe1cf;
-  padding: 30px;
-  height: 96.5%;
+.form-new-notes {
+  .form-input-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .form-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
 }
