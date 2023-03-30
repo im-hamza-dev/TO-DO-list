@@ -59,7 +59,6 @@ function TodoList() {
   isLoading && <p className="loader">Loading...</p>;
   return (
     <React.Fragment>
-      <Header />
       <main className="main-wrapper">
         <List items={todoItems} />
         <Button onClick={() => setOpenForm(true)}>Add Notes</Button>
