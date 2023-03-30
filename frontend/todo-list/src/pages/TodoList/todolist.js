@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
+import Button from "../../components/Button/button";
 import { Header, NewTodoForm, List } from "../../components";
 import "./todolist.scss";
 
@@ -56,13 +56,12 @@ function TodoList() {
       alert(error.message || "Something went wrong!");
     }
   };
-
+  isLoading && <p className="loader">Loading...</p>;
   return (
     <React.Fragment>
       <Header />
       <main className="main-wrapper">
-        {!isLoading && <List items={todoItems} />}
-        {isLoading && <p className="loader">Loading...</p>}
+        <List items={todoItems} />
         <Button onClick={() => setOpenForm(true)}>Add Notes</Button>
         <NewTodoForm
           openForm={openForm}

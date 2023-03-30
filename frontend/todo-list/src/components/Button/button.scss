@@ -1,8 +1,8 @@
 .button {
   font: inherit;
   padding: 0.5rem 2rem;
-  background: #dc5b11;
-  border: 1px solid #dc5b11;
+  background-color: #4d56ba;
+  border: none;
   color: white;
   cursor: pointer;
   transition: 0.3s;
@@ -11,7 +11,6 @@
   }
   &:hover,
   :active {
-    background: #9e420c;
-    border-color: #9e420c;
+    background: #7e3cf8;
   }
 }

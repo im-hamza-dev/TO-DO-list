@@ -12,6 +12,15 @@
     align-items: center;
     justify-content: flex-start;
     border-right: 1px solid rgba(128, 128, 128, 0.2);
+    .columns-heading {
+      color: #7e3cf8;
+      font-weight: 700 !important;
+      width: 100%;
+      border: 1px solid rgba(126, 60, 248, 0.3);
+      text-align: center;
+      border-radius: 4px;
+      padding: 10px;
+    }
   }
 }
 

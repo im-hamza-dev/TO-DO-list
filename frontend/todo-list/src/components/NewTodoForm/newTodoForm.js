@@ -81,7 +81,10 @@ const NewTodoForm = ({ openForm, onAddTodo, setOpenForm }) => {
               value={deadline}
               onChange={deadlineChangeHandler}
             />
-            <Form.Select onChange={() => {}} value={color}>
+            <Form.Select
+              onChange={(e) => setColor(e.target.value)}
+              value={color}
+            >
               <option>Select</option>
               <option>Red</option>
               <option>Amber</option>
