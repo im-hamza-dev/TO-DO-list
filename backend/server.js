@@ -31,6 +31,7 @@ app.use(
     check("desc").not().isEmpty(),
     check("title").isLength({ min: 5 }),
     check("desc").isLength({ min: 5 }),
+    check("status").not().isEmpty(),
   ],
   itemroutes
 );

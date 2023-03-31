@@ -1,10 +1,12 @@
 const mongoose = require("mongoose");
 
 const todoItemsSchema = new mongoose.Schema({
-  title: { type: string, required: true },
-  description: { type: string, required: true },
-  status: { type: string },
-  deadline: { type: string },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  status: { type: String },
+  deadline: { type: Date },
+  color: { type: String },
+  tags: { type: String },
 });
 
 module.exports = mongoose.model("TodoItem", todoItemsSchema);

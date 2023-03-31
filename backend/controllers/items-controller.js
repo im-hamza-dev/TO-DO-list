@@ -1,6 +1,5 @@
 const HttpError = require("../models/http-error");
 const { validationResult } = require("express-validator");
-// const { MongoClient } = require("mongodb");
 const mongoose = require("mongoose");
 const uri =
   "mongodb+srv://hamzadev:aYm6UokQghIaSktB@cluster0.4mfsatg.mongodb.net/?retryWrites=true&w=majority";
@@ -24,7 +23,7 @@ const getTodoItems = async (req, res, next) => {
 };
 
 const createTodoItems = async (req, res, next) => {
-  const { title, desc } = req.body;
+  const { title, desc, color, deadline, status, tags } = req.body;
 
   // Validate Actions
   const errors = validationResult(req);
@@ -38,11 +37,15 @@ const createTodoItems = async (req, res, next) => {
   const createdItem = new TodoItem({
     title,
     desc,
+    color,
+    deadline,
+    status,
+    tags,
   });
   console.log(createdItem);
   let result = await createdItem.save();
   res.status(201).json({
-    message: "New todo item created.",
+    message: "New Notes created.",
     todoItem: result,
   });
 };
