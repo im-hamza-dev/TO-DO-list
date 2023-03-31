@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 app.use(
-  "/api/",
+  "/api/notes",
   [
     check("title").not().isEmpty(),
     check("desc").not().isEmpty(),
