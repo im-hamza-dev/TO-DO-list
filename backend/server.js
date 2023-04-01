@@ -1,5 +1,6 @@
 // imort routes-model and error-model
 const itemroutes = require("./routes/item-routes");
+const authroutes = require("./routes/user-routes");
 const HttpError = require("./models/http-error");
 
 const { check } = require("express-validator");
@@ -35,6 +36,8 @@ app.use(
   ],
   itemroutes
 );
+
+app.use("/api/users", authroutes);
 
 app.use((req, res, next) => {
   const error = new HttpError("Could not find this route.", 404);

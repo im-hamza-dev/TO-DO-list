@@ -10,9 +10,18 @@ mongoose
   .then(() => console.log("Connecting MongoDB"))
   .catch((err) => console.log("Unable to Connect", err));
 
-const getUsers = async (req, res, next) => {};
+const login = async (req, res, next) => {
+  // Find user in User Schema by email
+  // validate user password
+  // send LOGGED IN response
+};
 
-const createUsers = async (req, res, next) => {};
+const createUsers = async (req, res, next) => {
+  // validation actions
+  // duplicate check on email using findOne({email: req.body.email})
+  // create user from schema
+  // save it
+};
 
-exports.getUsers = getUsers;
+exports.login = login;
 exports.createUsers = createUsers;
