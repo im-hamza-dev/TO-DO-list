@@ -7,6 +7,7 @@ const todoItemsSchema = new mongoose.Schema({
   deadline: { type: Date },
   color: { type: String },
   tags: { type: String },
+  creator: { type: String, required: true, ref: "User" },
 });
 
 module.exports = mongoose.model("TodoItem", todoItemsSchema);

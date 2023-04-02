@@ -3,7 +3,6 @@ const { validationResult } = require("express-validator");
 const mongoose = require("mongoose");
 const uri =
   "mongodb+srv://hamzadev:aYm6UokQghIaSktB@cluster0.4mfsatg.mongodb.net/?retryWrites=true&w=majority";
-
 // Connecting MongoDB database
 mongoose
   .connect(uri)
