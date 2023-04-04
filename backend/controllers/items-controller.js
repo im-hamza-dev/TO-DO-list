@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const uri =
   "mongodb+srv://hamzadev:aYm6UokQghIaSktB@cluster0.4mfsatg.mongodb.net/?retryWrites=true&w=majority";
 
-const TodoItem = require("../models/todo-items");
+const Notes = require("../models/todo-items");
 
 // Connecting MongoDB database
 mongoose
@@ -14,7 +14,7 @@ mongoose
 
 const getNotes = async (req, res, next) => {
   // Connecting MongoDB database
-  let itemsList = await TodoItem.find().exec();
+  let itemsList = await Notes.find().exec();
   if (!itemsList) {
     return next(new HttpError("No To-do Items found", 404));
   }
@@ -36,7 +36,7 @@ const createNotes = async (req, res, next) => {
     );
   }
 
-  const createdItem = new TodoItem({
+  const createdItem = new Notes({
     title,
     desc,
     color,
@@ -90,7 +90,7 @@ const delNotes = async (req, res, next) => {
   const { nid } = req.params;
   let notesItem;
   try {
-    notesItem = await TodoItem.findById(nid);
+    notesItem = await Notes.findById(nid);
   } catch (err) {
     let error = new HttpError("Unable to find this notes!", 403);
     return next(error);

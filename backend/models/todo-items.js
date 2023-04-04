@@ -10,7 +10,7 @@ const notesSchema = new mongoose.Schema({
   creator: { type: String, required: true, ref: "User" },
 });
 
-module.exports = mongoose.model("TodoItem", notesSchema);
+module.exports = mongoose.model("Notes", notesSchema);
 
 // create TYPE SCHEMA of collection documents acting here as MODEL
 // in controllers file, we will create instances of above MODEL to add in Collections
