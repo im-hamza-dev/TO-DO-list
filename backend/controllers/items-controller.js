@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const uri =
   "mongodb+srv://hamzadev:aYm6UokQghIaSktB@cluster0.4mfsatg.mongodb.net/?retryWrites=true&w=majority";
 
-const Notes = require("../models/todo-items");
+const Notes = require("../models/notes");
 
 // Connecting MongoDB database
 mongoose
@@ -14,13 +14,13 @@ mongoose
 
 const getNotes = async (req, res, next) => {
   // Connecting MongoDB database
-  let itemsList = await Notes.find().exec();
-  if (!itemsList) {
+  let notesList = await Notes.find().exec();
+  if (!notesList) {
     return next(new HttpError("No To-do Items found", 404));
   }
 
   res.status(200).json({
-    todoItems: itemsList.map((obj) => obj.toObject({ getters: true })),
+    todoItems: notesList.map((obj) => obj.toObject({ getters: true })),
   });
 };
 
