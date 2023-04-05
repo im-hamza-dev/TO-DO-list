@@ -1,5 +1,5 @@
 // imort routes-model and error-model
-const itemroutes = require("./routes/item-routes");
+const notesroutes = require("./routes/notes-routes");
 const authroutes = require("./routes/user-routes");
 const HttpError = require("./models/http-error");
 
@@ -34,7 +34,7 @@ app.use(
     check("desc").isLength({ min: 5 }),
     check("status").not().isEmpty(),
   ],
-  itemroutes
+  notesroutes
 );
 
 app.use("/api/users", authroutes);
