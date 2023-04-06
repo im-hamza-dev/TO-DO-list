@@ -61,7 +61,7 @@ function TodoList() {
     <React.Fragment>
       <main className="main-wrapper">
         <List items={todoItems} />
-        <Button onClick={() => setOpenForm(true)}>Add Notes</Button>
+        {/* <Button onClick={() => setOpenForm(true)}>Add Notes</Button> */}
         <NewTodoForm
           openForm={openForm}
           onAddTodo={addTodoHandler}

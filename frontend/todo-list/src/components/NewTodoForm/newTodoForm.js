@@ -37,78 +37,73 @@ const NewTodoForm = ({ openForm, onAddTodo, setOpenForm }) => {
   };
 
   return (
-    <Modal
-      show={openForm}
-      size="md"
-      backdrop="static"
-      onHide={() => setOpenForm(false)}
-      dialogClassName="custom-modal"
-      placement={"end"}
-    >
-      <Modal.Header closeButton>
-        <Modal.Title>Add Notes</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Form onSubmit={submitProductHandler} className="form-new-notes">
-          <Input
-            type="text"
-            label="Title"
-            id="title"
-            autoFocus
-            value={enteredTitle}
-            onChange={titleChangeHandler}
-          />
-          <CKEditor
-            editor={ClassicEditor}
-            data={description}
-            onChange={(event, editor) => {
-              const data = editor.getData();
-              descChangeHandler(data);
-            }}
-          />
-          <div className="form-input-row">
-            <Input
-              type="text"
-              label="Status"
-              id="status"
-              value={status}
-              onChange={statusChangeHandler}
-            />
-            <Input
-              type="date"
-              label="Deadline"
-              id="date"
-              value={deadline}
-              onChange={deadlineChangeHandler}
-            />
-            <Form.Select
-              onChange={(e) => setColor(e.target.value)}
-              value={color}
-            >
-              <option>Select</option>
-              <option>Red</option>
-              <option>Amber</option>
-              <option>Blue</option>
-              <option>Purple</option>
-              <option>Green</option>
-              <option>Grey</option>
-              <option>Black</option>
-              <option>White</option>
-            </Form.Select>
-          </div>
-          <Input
-            type="tags"
-            label="Tags"
-            id="tags"
-            value={tags}
-            onChange={tagsChangeHandler}
-          />
-          <div className="form-button-wrapper">
-            <Button type="submit">Add Todo </Button>
-          </div>
-        </Form>
-      </Modal.Body>
-    </Modal>
+    // <Modal
+    //   show={openForm}
+    //   size="md"
+    //   backdrop="static"
+    //   onHide={() => setOpenForm(false)}
+    //   dialogClassName="custom-modal"
+    //   placement={"end"}
+    // >
+    //   <Modal.Header closeButton>
+    //     <Modal.Title>Add Notes</Modal.Title>
+    //   </Modal.Header>
+    //   <Modal.Body>
+    <Form onSubmit={submitProductHandler} className="form-new-notes">
+      <Input
+        type="text"
+        label="Title"
+        id="title"
+        autoFocus
+        value={enteredTitle}
+        onChange={titleChangeHandler}
+      />
+      <CKEditor
+        editor={ClassicEditor}
+        data={description}
+        onChange={(event, editor) => {
+          const data = editor.getData();
+          descChangeHandler(data);
+        }}
+      />
+      <div className="form-input-row">
+        <Input
+          type="text"
+          label="Status"
+          id="status"
+          value={status}
+          onChange={statusChangeHandler}
+        />
+        <Input
+          type="date"
+          label="Deadline"
+          id="date"
+          value={deadline}
+          onChange={deadlineChangeHandler}
+        />
+        <Form.Select onChange={(e) => setColor(e.target.value)} value={color}>
+          <option>Select</option>
+          <option>Red</option>
+          <option>Amber</option>
+          <option>Blue</option>
+          <option>Purple</option>
+          <option>Green</option>
+          <option>Grey</option>
+          <option>Black</option>
+          <option>White</option>
+        </Form.Select>
+      </div>
+      <Input
+        type="tags"
+        label="Tags"
+        id="tags"
+        value={tags}
+        onChange={tagsChangeHandler}
+      />
+      <div className="form-button-wrapper">
+        <Button type="submit">Add Todo </Button>
+      </div>
+    </Form>
   );
 };
 
