@@ -9,6 +9,7 @@ mongoose
   .then(() => console.log("Connecting MongoDB"))
   .catch((err) => console.log("Unable to Connect", err));
 
+const getUsers = () => {};
 const login = async (req, res, next) => {
   // Find user in User Schema by email
   // validate user password
@@ -22,5 +23,6 @@ const createUsers = async (req, res, next) => {
   // save it
 };
 
+exports.getUsers = getUsers;
 exports.login = login;
 exports.createUsers = createUsers;
