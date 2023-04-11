@@ -2,14 +2,14 @@ import React from "react";
 import ListItem from "./subcomponents/ListItem/listItem";
 import "./list.scss";
 
-const List = (props) => {
+const List = ({ items }) => {
   let content;
-  if (!props.items || props.items.length === 0) {
+  if (!items || items.length === 0) {
     content = <p>Could not find any item. Maybe create one?</p>;
   } else {
     content = (
       <>
-        {props.items.map((p) => (
+        {items.map((p) => (
           <ListItem key={p.id} name={p.title} desc={p.desc} />
         ))}
       </>
