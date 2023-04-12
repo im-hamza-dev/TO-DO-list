@@ -1,16 +1,16 @@
 import React from "react";
 import "./input.scss";
 import { Form } from "react-bootstrap";
-const Input = (props) => {
+const Input = ({ type, step, id, value, onChange, label }) => {
   return (
     <Form.Group className="input">
-      <Form.Label htmlFor={props.id}>{props.label}</Form.Label>
+      <Form.Label htmlFor={id}>{label}</Form.Label>
       <Form.Control
-        type={props.type}
-        step={props.step}
-        id={props.id}
-        value={props.value}
-        onChange={props.onChange}
+        type={type}
+        step={step}
+        id={id}
+        value={value}
+        onChange={onChange}
       />
     </Form.Group>
   );
