@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Button from "../../components/Button/button";
-import { Header, NewTodoForm, List } from "../../components";
+import { NewTodoForm, List } from "../../components";
 import "./todolist.scss";
 
 function TodoList() {
