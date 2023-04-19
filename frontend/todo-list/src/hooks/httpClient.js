@@ -21,7 +21,6 @@ export const useHttpClient = () => {
         setIsLoading(false);
         setErrorMessage(err);
       }
-      // get arguments and call API on URL by method attahcing body and headers
     },
     []
   );
