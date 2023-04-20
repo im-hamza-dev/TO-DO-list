@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { NewTodoForm, List } from "../../components";
-import "./todolist.scss";
+import "./notes.scss";
 
-function TodoList() {
+function Notes() {
   const [todoItems, setTodoItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [openForm, setOpenForm] = useState(false);
@@ -71,4 +71,4 @@ function TodoList() {
   );
 }
 
-export default TodoList;
+export default Notes;

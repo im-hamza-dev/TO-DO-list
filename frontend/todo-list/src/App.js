@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import TodoList from "./pages/TodoList/todolist";
+import Notes from "./pages/notes/notes";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <React.Fragment>
-      <TodoList />
+      <Notes />
     </React.Fragment>
   );
 }
