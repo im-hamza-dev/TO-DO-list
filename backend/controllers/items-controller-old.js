@@ -31,7 +31,6 @@ const createTodoItems = async (req, res, next) => {
 
   // Validate Actions
   const errors = validationResult(req);
-  console.log(errors);
   if (!errors.isEmpty()) {
     return next(
       new HttpError("Invalid input, please enter a valid title and desc.", 403)
@@ -43,7 +42,6 @@ const createTodoItems = async (req, res, next) => {
     title,
     desc,
   };
-  console.log(createdItem);
 
   // Connecting MongoDB database
   const client = new MongoClient(uri);
