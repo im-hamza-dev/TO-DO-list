@@ -1,4 +1,4 @@
-# TO-DO-list
+# notes
 
 ## TECH-STACK
 Frontend:
