@@ -1,6 +1,8 @@
 import { useCallback, useState } from "react";
 import axios from "axios";
 
+// take url, method-type, body, header and return response, loader and error state
+
 export const useHttpClient = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
