@@ -6,7 +6,7 @@ import "./newTodoForm.scss";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
-const NewTodoForm = ({ openForm, onAddTodo, setOpenForm }) => {
+const NewTodoForm = React.useMemo(({ openForm, onAddTodo, setOpenForm }) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [description, setDescription] = useState("");
   const [color, setColor] = useState("");
@@ -105,6 +105,6 @@ const NewTodoForm = ({ openForm, onAddTodo, setOpenForm }) => {
       </div>
     </Form>
   );
-};
+});
 
 export default NewTodoForm;
