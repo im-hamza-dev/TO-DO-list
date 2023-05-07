@@ -101,7 +101,7 @@ const NewTodoForm = React.useMemo(({ openForm, onAddTodo, setOpenForm }) => {
         onChange={tagsChangeHandler}
       />
       <div className="form-button-wrapper">
-        <Button type="submit">Add Todo </Button>
+        <Button type="submit">Add Notes</Button>
       </div>
     </Form>
   );
