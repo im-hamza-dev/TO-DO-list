@@ -85,9 +85,6 @@ const NewTodoForm = React.useMemo(({ openForm, onAddTodo, setOpenForm }) => {
           <option>Select</option>
           <option>Red</option>
           <option>Amber</option>
-          <option>Blue</option>
-          <option>Purple</option>
-          <option>Green</option>
           <option>Grey</option>
           <option>Black</option>
           <option>White</option>
