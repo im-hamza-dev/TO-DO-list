@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { Modal, Form } from "react-bootstrap";
+import React, { useState, memo } from "react";
+import { Form } from "react-bootstrap";
 import Input from "../Input/input";
 import Button from "../Button/button";
 import "./newTodoForm.scss";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
-const NewTodoForm = React.useMemo(({ openForm, onAddTodo, setOpenForm }) => {
+const NewTodoForm = memo(({ openForm, onAddTodo, setOpenForm }) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [description, setDescription] = useState("");
   const [color, setColor] = useState("");
