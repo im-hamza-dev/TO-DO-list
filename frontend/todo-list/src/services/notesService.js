@@ -1,15 +1,15 @@
 import { post, get, put } from "../singelton/axios/index";
-import * as url from "../helpers/url_helper";
+import NotesAPI from "../utils/config";
 
 // get contacts
-export const getNotes = () => get(url.GET_CAMERAS);
+export const getNotes = () => get(NotesAPI.getNote);
 
-export const addNotes = (Notes) => post(url.ADD_Notes, Notes);
+export const addNotes = (Notes) => post(NotesAPI.createNote, Notes);
 
 export const updateNotes = (Notes) =>
-  put(`${url.UPDATE_Notes}/${Notes.id}`, Notes);
+  put(`${NotesAPI.updateNote}/${Notes.id}`, Notes);
 
-export const ActivateUpdateNotes = (Notes) =>
-  put(`${url.UPDATE_Notes}/${Notes.id}/activate`, Notes);
+export const deleteNote = (Notes) =>
+  put(`${NotesAPI.deleteNote}/${Notes.id}/activate`, Notes);
 
 // notes module services
