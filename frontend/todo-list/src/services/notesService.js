@@ -9,7 +9,6 @@ export const addNotes = (Notes) => post(NotesAPI.createNote, Notes);
 export const updateNotes = (Notes) =>
   put(`${NotesAPI.updateNote}/${Notes.id}`, Notes);
 
-export const deleteNote = (Notes) =>
-  put(`${NotesAPI.deleteNote}/${Notes.id}/activate`, Notes);
+export const deleteNote = (Notes) => put(`${NotesAPI.deleteNote}/${Notes.id}`);
 
 // notes module services
