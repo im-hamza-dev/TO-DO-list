@@ -6,6 +6,7 @@ import { API_URL } from "../../constants/api";
 const axiosApi = axios.create({
   baseURL: API_URL,
 });
+// axios singelton file
 
 //pass new generated access token here
 export const setHeaders = (AUTH_TOKEN) => {
