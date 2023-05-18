@@ -9,9 +9,9 @@ const axiosApi = axios.create({
 // axios singelton file
 
 //pass new generated access token here
-export const setHeaders = (AUTH_TOKEN) => {
-  axiosApi.defaults.headers.common["Authorization"] = `Bearer ${AUTH_TOKEN}`;
-};
+// export const setHeaders = (AUTH_TOKEN) => {
+//   axiosApi.defaults.headers.common["Authorization"] = `Bearer ${AUTH_TOKEN}`;
+// };
 
 axiosApi.interceptors.response.use(
   (response) => response,
