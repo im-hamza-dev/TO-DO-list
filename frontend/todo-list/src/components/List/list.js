@@ -5,7 +5,7 @@ import "./list.scss";
 const List = ({ items }) => {
   let content;
   if (!items || items.length === 0) {
-    content = <p>Could not find any item. Maybe create one?</p>;
+    content = <p>Notes not found. Maybe create one?</p>;
   } else {
     content = (
       <>
