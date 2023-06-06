@@ -1,6 +1,6 @@
 import React from "react";
 import "./header.scss";
-
+// MOVE THIS HEADER TO LEFT SIDE FOR MODERN USER INTERFACE
 const Header = () => {
   return (
     <header className="header">
