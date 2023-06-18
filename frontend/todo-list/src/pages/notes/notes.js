@@ -9,7 +9,7 @@ function Notes() {
   useEffect(() => {
     const fetchItems = async () => {
       setIsLoading(true);
-      const response = await fetch("http://localhost:5000/api/todoItems");
+      const response = await fetch("http://localhost:5000/api/notes");
 
       const responseData = await response.json();
 

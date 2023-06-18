@@ -22,15 +22,6 @@ const List = ({ items }) => {
         <h5 className="columns-heading">Todo</h5>
         {content}
       </div>
-      <div className="items-col">
-        <h5 className="columns-heading">In Progress</h5>
-
-        {content}
-      </div>
-      <div className="items-col">
-        <h5 className="columns-heading">Completed</h5>
-        {content}
-      </div>
     </section>
   );
 };
