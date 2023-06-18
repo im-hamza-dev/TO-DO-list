@@ -20,14 +20,25 @@ function Notes() {
     fetchItems();
   }, []);
 
-  const addTodoHandler = async (todoName, description) => {
+  const addTodoHandler = async (
+    todoName,
+    description,
+    color,
+    deadline,
+    status,
+    tags
+  ) => {
     try {
       const newTodo = {
         title: todoName,
         desc: description, // "+" to convert string to number
+        color,
+        deadline,
+        status,
+        tags,
       };
       let hasError = false;
-      const response = await fetch("http://localhost:5000/api/todoItem", {
+      const response = await fetch("http://localhost:5000/api/notes", {
         method: "POST",
         body: JSON.stringify(newTodo),
         headers: {

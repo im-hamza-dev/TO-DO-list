@@ -33,7 +33,7 @@ const NewTodoForm = memo(({ openForm, onAddTodo, setOpenForm }) => {
 
   const submitProductHandler = (event) => {
     event.preventDefault();
-    onAddTodo(enteredTitle, description);
+    onAddTodo(enteredTitle, description, color, deadline, status, tags);
   };
 
   return (
